@@ -1,0 +1,51 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Routing\Controller as BaseController;
+use Illuminate\Foundation\Validation\ValidatesRequests;
+use App\Http\Requests\IssueRequest;
+use App\Models\IssueModel;
+
+/**
+ * This controller handles all issue actions
+ */
+final class Issue extends BaseController
+{
+	/**
+     * Displays a a grid with issues
+	 */
+	public function displayGridAction()
+	{
+		return view('grid', [
+			'records' => IssueModel::all()
+		]);
+	}
+
+	/**
+	 * Displays all issues
+	 */
+	public function addViewAction()
+	{
+		return view('add');
+	}
+
+	/**
+	 * Adds a blog's entity
+	 */
+	public function addAction(IssueRequest $request)
+	{
+		IssueModel::create($request->all());
+		return redirect()->action('Issue@displayGridAction');
+	}
+
+	/**
+	 * @param $id The issue id
+	 */
+	public function editViewAction($id)
+	{
+		$issue = IssueModel::findOrFail($id);
+		dd($issue);
+	}
+}
