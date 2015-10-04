@@ -11,8 +11,8 @@
 		<th>Actions</th>
 	</thead>
 	<tbody>
+		@foreach ($records as $record)
 		<tr>
-			@foreach ($records as $record)
 			<td>{{ $record->id }}</td>
 			<td>{{ $record->name }}</td>
 			<td>{{ $record->description }}</td>
@@ -21,8 +21,8 @@
 				<a href="{{ action('Issue@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
 				<a href="#"><i class="glyphicon glyphicon-remove"></i> </a>
 			</td>
-			@endforeach
 		</tr>
+		@endforeach
 	</tbody>
 
 </table>
