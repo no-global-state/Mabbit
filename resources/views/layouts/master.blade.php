@@ -29,6 +29,10 @@
 
       <div class="row">
         <div class="col-lg-9 blog-main">
+          @if (Session::has('status'))
+            <div class="alert alert-success">{{ Session::get('status') }}</div>
+          @endif
+
     			@yield('content')
         </div>
       </div>
