@@ -1,6 +1,11 @@
 @extends('layouts.master')
 @section('content')
 
+<a class="btn btn-primary" href="{{ action('Issue@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
+
+<br />
+<br />
+
 @if (!empty($records))
 
 <table class="table">
