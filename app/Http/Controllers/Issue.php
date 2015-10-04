@@ -37,6 +37,8 @@ final class Issue extends BaseController
 	public function addAction(IssueRequest $request)
 	{
 		IssueModel::create($request->all());
+		\Session::flash('status', 'The issue has added updated successfully');
+
 		return redirect()->action('Issue@displayGridAction');
 	}
 
@@ -60,6 +62,8 @@ final class Issue extends BaseController
 
 		$model = IssueModel::findOrFail($input['id']);
 		$model->update($input);
+
+		\Session::flash('status', 'The issue has been updated successfully');
 
 		return redirect()->action('Issue@displayGridAction');
 	}
