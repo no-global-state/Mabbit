@@ -46,6 +46,21 @@ final class Issue extends BaseController
 	public function editViewAction($id)
 	{
 		$issue = IssueModel::findOrFail($id);
-		dd($issue);
+		return view('edit', [
+			'model' => $issue
+		]);
+	}
+
+	/**
+	 * Updates the issue
+	 */
+	public function editAction(IssueRequest $request)
+	{
+		$input = $request->all();
+
+		$model = IssueModel::findOrFail($input['id']);
+		$model->update($input);
+
+		return redirect()->action('Issue@displayGridAction');
 	}
 }
