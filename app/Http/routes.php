@@ -16,3 +16,4 @@ Route::get('/issues', 'Issue@displayGridAction');
 Route::get('/issue/add', 'Issue@addViewAction');
 Route::post('/issue/add.ajax', 'Issue@addAction');
 Route::get('/issue/edit/{id}', 'Issue@editViewAction');
+Route::post('/issue/edit.ajax', 'Issue@editAction');
