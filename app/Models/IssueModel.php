@@ -23,6 +23,7 @@ class IssueModel extends Model
 	 */
 	protected $fillable = [
 		'name', 
-		'description'
+		'description',
+		'solved'
 	];
 }
