@@ -19,7 +19,7 @@ final class Issue extends BaseController
 	public function displayGridAction()
 	{
 		return view('grid', [
-			'records' => IssueModel::all()
+			'records' => IssueModel::latest('id')->paginate(5)
 		]);
 	}
 
