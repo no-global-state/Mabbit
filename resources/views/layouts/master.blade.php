@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   	<title>@yield('title')</title>
-    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
+    <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet" />
   </head>
   <body>
     <div class="blog-masthead">
@@ -27,17 +27,15 @@
         <p class="lead blog-description">Minimalistic issue tracking system</p>
       </div>
 
-      <div class="row">
-        <div class="col-lg-9 blog-main">
-          @if (Session::has('status'))
-            <div class="alert alert-success">{{ Session::get('status') }}</div>
-          @endif
-		  
-		  @yield('content')
-        </div>
-      </div>
+	 <div>
+	  @if (Session::has('status'))
+		<div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
+	  @endif
+	  
+	  @yield('content')
+	 </div>
 
-    </div><!-- /.container -->
+    </div>
 
     <footer class="blog-footer">
       <p><a href="#">Back to top</a></p>
