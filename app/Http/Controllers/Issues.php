@@ -25,6 +25,21 @@ final class Issues extends BaseController
 	}
 
 	/**
+	 * Displays an issue by its associated id
+	 * 
+	 * @param string $id Issue's id
+	 * @return string
+	 */
+	public function viewAction($id)
+	{
+		$issue = Issue::findOrFail($id);
+
+		return view('view', [
+			'issue' => $issue
+		]);
+	}
+
+	/**
 	 * Displays all issues
 	 * 
 	 * @return string

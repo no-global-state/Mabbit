@@ -29,7 +29,7 @@ Issues
 			<td>{{ $record->description }}</td>
 			<td class="text-center">{{ $record->solved ? 'Yes' : 'No' }}</td>
 			<td class="text-center">
-				<a href="#"><i class="glyphicon glyphicon-eye-open"></i> </a>
+				<a href="{{ action('Issues@viewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
 				<a href="{{ action('Issues@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
 				<a href="#"><i class="glyphicon glyphicon-remove"></i> </a>
 			</td>

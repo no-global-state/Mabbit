@@ -17,3 +17,4 @@ Route::get('/issues/add', 'Issues@addViewAction');
 Route::post('/issues/add.ajax', 'Issues@addAction');
 Route::get('/issues/edit/{id}', 'Issues@editViewAction');
 Route::post('/issues/edit.ajax', 'Issues@editAction');
+Route::get('/issues/view/{id}', 'Issues@viewAction');
