@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Requests\IssueRequest;
 use App\Issue;
+use App\Tag;
 
 /**
  * This controller handles all issue actions
@@ -30,7 +31,9 @@ final class Issues extends BaseController
 	 */
 	public function addViewAction()
 	{
-		return view('add');
+		return view('add', [
+			'tags' => Tag::lists('name', 'id')
+		]);
 	}
 
 	/**
@@ -41,7 +44,12 @@ final class Issues extends BaseController
 	 */
 	public function addAction(IssueRequest $request)
 	{
-		Issue::create($request->all());
+		// Add the issue itself
+		$model = Issue::create($request->all());
+
+		// Add its tags
+		$model->tags()->attach($request->input('tag_list'));
+
 		\Session::flash('status', 'The issue has added updated successfully');
 
 		return redirect()->action('Issues@displayGridAction');
@@ -56,8 +64,10 @@ final class Issues extends BaseController
 	public function editViewAction($id)
 	{
 		$issue = Issue::findOrFail($id);
+
 		return view('edit', [
-			'model' => $issue
+			'model' => $issue,
+			'tags' => Tag::lists('name', 'id')
 		]);
 	}
 
@@ -73,6 +83,11 @@ final class Issues extends BaseController
 
 		$model = Issue::findOrFail($input['id']);
 		$model->update($input);
+
+		$tags = $request->input('tag_list', []);
+
+		// Add its tags
+		$model->tags()->sync($tags);
 
 		\Session::flash('status', 'The issue has been updated successfully');
 

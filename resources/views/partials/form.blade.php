@@ -10,6 +10,11 @@
 </div>
 
 <div class="form-group">
+  {!! Form::label('tag_list', 'Tags:') !!}
+  {!! Form::select('tag_list[]', $tags, null, ['class' => 'form-control', 'multiple']) !!}
+</div>
+
+<div class="form-group">
   {!! Form::label('description', 'Solved:') !!}
   {!! Form::hidden('solved', '0') !!}
   {!! Form::checkbox('solved') !!}

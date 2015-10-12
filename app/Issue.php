@@ -24,4 +24,24 @@ class Issue extends Model
 		'description',
 		'solved'
 	];
+
+	/**
+	 * Fetch all tags associated with a model
+	 * 
+	 * @return array
+	 */
+	public function tags()
+	{
+		return $this->belongsToMany('App\Tag');
+	}
+
+	/**
+	 * Implementation for tag_list magic property 
+	 * 
+	 * @return array
+	 */
+	public function getTagListAttribute()
+	{
+		return $this->tags()->lists('id')->toArray();
+	}
 }
