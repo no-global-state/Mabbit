@@ -10,20 +10,12 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 class Home extends BaseController
 {
 	/**
-	 * Adds a blog's entity
-	 */
-	public function addAction()
-	{
-		return view('add');
-	}
-
-	/**
 	 * Display a home page
+	 * 
+	 * @return string
 	 */
 	public function indexAction()
 	{
-		return view('home', array(
-			
-		));
+		return view('home');
 	}
 }
