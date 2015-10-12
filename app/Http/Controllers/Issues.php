@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
-use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\IssueRequest;
 use App\Issue;
 
@@ -15,6 +13,8 @@ final class Issues extends BaseController
 {
 	/**
      * Displays a a grid with issues
+	 * 
+	 * @return string
 	 */
 	public function displayGridAction()
 	{
@@ -25,6 +25,8 @@ final class Issues extends BaseController
 
 	/**
 	 * Displays all issues
+	 * 
+	 * @return string
 	 */
 	public function addViewAction()
 	{
@@ -32,7 +34,10 @@ final class Issues extends BaseController
 	}
 
 	/**
-	 * Adds a blog's entity
+	 * Adds a new issue
+	 * 
+	 * @param IssueRequest $request
+	 * @return void
 	 */
 	public function addAction(IssueRequest $request)
 	{
@@ -43,7 +48,10 @@ final class Issues extends BaseController
 	}
 
 	/**
+	 * Displays issue's edit form
+	 * 
 	 * @param $id The issue id
+	 * @return string
 	 */
 	public function editViewAction($id)
 	{
@@ -54,7 +62,10 @@ final class Issues extends BaseController
 	}
 
 	/**
-	 * Updates the issue
+	 * Updates an issue
+	 * 
+	 * @param IssueRequest $request
+	 * @return void
 	 */
 	public function editAction(IssueRequest $request)
 	{
