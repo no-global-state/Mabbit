@@ -6,7 +6,7 @@ Issues
 
 @section('content')
 
-<a class="btn btn-primary" href="{{ action('Issue@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
+<a class="btn btn-primary" href="{{ action('Issues@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
 
 <br />
 <br />
@@ -30,7 +30,7 @@ Issues
 			<td>{{ $record->solved ? 'Yes' : 'No' }}</td>
 			<td>
 				<a href="#"><i class="glyphicon glyphicon-eye-open"></i> </a>
-				<a href="{{ action('Issue@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
+				<a href="{{ action('Issues@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
 				<a href="#"><i class="glyphicon glyphicon-remove"></i> </a>
 			</td>
 		</tr>

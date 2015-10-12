@@ -8,7 +8,7 @@
   
   <h2 class="page-header">Add new issue</h2>
   
-  {!! Form::open(['action' => 'Issue@addAction']) !!}
+  {!! Form::open(['action' => 'Issues@addAction']) !!}
   	@include('partials.form')
   {!! Form::close() !!}
 

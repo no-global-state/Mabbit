@@ -6,12 +6,12 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use App\Http\Requests\IssueRequest;
-use App\Models\IssueModel;
+use App\Issue;
 
 /**
  * This controller handles all issue actions
  */
-final class Issue extends BaseController
+final class Issues extends BaseController
 {
 	/**
      * Displays a a grid with issues
@@ -19,7 +19,7 @@ final class Issue extends BaseController
 	public function displayGridAction()
 	{
 		return view('grid', [
-			'records' => IssueModel::latest('id')->paginate(5)
+			'records' => Issue::latest('id')->paginate(5)
 		]);
 	}
 
@@ -36,10 +36,10 @@ final class Issue extends BaseController
 	 */
 	public function addAction(IssueRequest $request)
 	{
-		IssueModel::create($request->all());
+		Issue::create($request->all());
 		\Session::flash('status', 'The issue has added updated successfully');
 
-		return redirect()->action('Issue@displayGridAction');
+		return redirect()->action('Issues@displayGridAction');
 	}
 
 	/**
@@ -47,7 +47,7 @@ final class Issue extends BaseController
 	 */
 	public function editViewAction($id)
 	{
-		$issue = IssueModel::findOrFail($id);
+		$issue = Issue::findOrFail($id);
 		return view('edit', [
 			'model' => $issue
 		]);
@@ -60,11 +60,11 @@ final class Issue extends BaseController
 	{
 		$input = $request->all();
 
-		$model = IssueModel::findOrFail($input['id']);
+		$model = Issue::findOrFail($input['id']);
 		$model->update($input);
 
 		\Session::flash('status', 'The issue has been updated successfully');
 
-		return redirect()->action('Issue@displayGridAction');
+		return redirect()->action('Issues@displayGridAction');
 	}
 }

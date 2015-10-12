@@ -12,8 +12,8 @@
 */
 
 Route::get('/', 'Home@indexAction');
-Route::get('/issues', 'Issue@displayGridAction');
-Route::get('/issue/add', 'Issue@addViewAction');
-Route::post('/issue/add.ajax', 'Issue@addAction');
-Route::get('/issue/edit/{id}', 'Issue@editViewAction');
-Route::post('/issue/edit.ajax', 'Issue@editAction');
+Route::get('/issues', 'Issues@displayGridAction');
+Route::get('/issues/add', 'Issues@addViewAction');
+Route::post('/issues/add.ajax', 'Issues@addAction');
+Route::get('/issues/edit/{id}', 'Issues@editViewAction');
+Route::post('/issues/edit.ajax', 'Issues@editAction');
