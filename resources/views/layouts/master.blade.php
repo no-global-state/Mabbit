@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  	<title>Issue Tracker</title>
+  	<title>@yield('title')</title>
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
   </head>
@@ -32,8 +32,8 @@
           @if (Session::has('status'))
             <div class="alert alert-success">{{ Session::get('status') }}</div>
           @endif
-
-    			@yield('content')
+		  
+		  @yield('content')
         </div>
       </div>
 
