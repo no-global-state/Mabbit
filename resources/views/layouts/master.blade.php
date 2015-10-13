@@ -27,13 +27,11 @@
         <p class="lead blog-description">Minimalistic issue tracking system</p>
       </div>
 
-	 <div>
-	  @if (Session::has('status'))
-		<div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
-	  @endif
-	  
-	  @yield('content')
-	 </div>
+      @if (Session::has('status'))
+		    <div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
+	    @endif
+	    
+  	  @yield('content')
 
     </div>
 
