@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   	<title>@yield('title')</title>
+    
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
+    <link href="/css/select2.min.css" rel="stylesheet" />
+
   </head>
   <body>
     <div class="blog-masthead">
@@ -47,6 +50,9 @@
 
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/select2.min.js"></script>
     <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
+    <script src="/js/app.js"></script>
+
   </body>
 </html>

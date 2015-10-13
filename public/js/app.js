@@ -1,0 +1,4 @@
+
+$(function(){
+	$('select').select2();
+});
