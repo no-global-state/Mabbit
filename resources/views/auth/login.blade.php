@@ -1,23 +1,28 @@
 @extends('layouts.master')
 
-<form method="POST" action="/auth/login">
-    {!! csrf_field() !!}
+@section('content')
+{!! Form::open(['url' => '/auth/login']) !!}
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
-    </div>
+	<div class="form-group">
+	  {!! Form::label('email', 'Email:') !!}
+	  {!! Form::text('email', null, ['class' => 'form-control']) !!}
+	</div>
 
-    <div>
-        Password
-        <input type="password" name="password" id="password">
-    </div>
+	<div class="form-group">
+	  {!! Form::label('password', 'Password:') !!}
+	  {!! Form::password('password', ['class' => 'form-control']) !!}
+	</div>
 
-    <div>
-        <input type="checkbox" name="remember"> Remember Me
-    </div>
+	<div class="form-group">
+	  {!! Form::label('remember', 'Remember me') !!}
+	  {!! Form::checkbox('remember') !!}
+	</div>
 
-    <div>
-        <button type="submit">Login</button>
-    </div>
-</form>
+    @include('partials.errors')
+
+	<div class="form-group">
+	  {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
+	</div>
+
+{!! Form::close() !!}
+@stop
