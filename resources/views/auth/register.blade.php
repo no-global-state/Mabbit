@@ -1,33 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
-<form method="POST" action="/auth/register">
-    {!! csrf_field() !!}
 
-    <div>
-        Name
-        <input type="text" name="name" value="{{ old('name') }}">
+{!! Form::open(['url' => '/auth/register']) !!}
+
+    <div class="form-group">
+      {!! Form::label('name', 'Name:') !!}
+      {!! Form::text('name', null, ['class' => 'form-control']) !!}
     </div>
 
-    <div>
-        Email
-        <input type="email" name="email" value="{{ old('email') }}">
+    <div class="form-group">
+      {!! Form::label('email', 'Email:') !!}
+      {!! Form::text('email', null, ['class' => 'form-control']) !!}
     </div>
 
-    <div>
-        Password
-        <input type="password" name="password">
+    <div class="form-group">
+      {!! Form::label('password', 'Password:') !!}
+      {!! Form::password('password', ['class' => 'form-control']) !!}
     </div>
 
-    <div>
-        Confirm Password
-        <input type="password" name="password_confirmation">
+    <div class="form-group">
+      {!! Form::label('password_confirmation', 'Confirm Password:') !!}
+      {!! Form::password('password_confirmation', ['class' => 'form-control']) !!}
     </div>
 
     @include('partials.errors')
-	
-    <div>
-        <button type="submit">Register</button>
+
+    <div class="form-group">
+      {!! Form::submit('Register', ['class' => 'btn btn-primary']) !!}
     </div>
-</form>
+
+{!! Form::close() !!}
+
 @stop
