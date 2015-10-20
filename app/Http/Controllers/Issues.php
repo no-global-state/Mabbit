@@ -12,7 +12,15 @@ use App\Tag;
  */
 final class Issues extends BaseController
 {
-	/**
+    /**
+     * {@inheritDoc}
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Displays a a grid with issues
 	 * 
 	 * @return string
