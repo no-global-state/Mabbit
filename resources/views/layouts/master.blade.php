@@ -15,11 +15,7 @@
     <div class="blog-masthead">
       <div class="container">
         <nav class="blog-nav">
-          <a class="blog-nav-item active" href="#">Home</a>
-          <a class="blog-nav-item" href="#">New features</a>
-          <a class="blog-nav-item" href="#">Press</a>
-          <a class="blog-nav-item" href="#">New hires</a>
-          <a class="blog-nav-item" href="#">About</a>
+          <a class="blog-nav-item" href="{{ action('Issues@displayGridAction') }}">Issues</a>
         </nav>
       </div>
     </div>
@@ -31,8 +27,8 @@
       </div>
 
       @if (Session::has('status'))
-		    <div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
-	    @endif
+		 <div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
+	  @endif
 	    
   	  @yield('content')
 
