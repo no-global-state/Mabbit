@@ -9,13 +9,6 @@ class Issue extends Model
 	 */
 	protected $table = 'system_issues';
 
-    /**
-     * Indicates if the model should be timestamped.
-     *
-     * @var bool
-     */
-    public $timestamps = false;
-
 	/**
 	 * {@inheritDoc}
 	 */
