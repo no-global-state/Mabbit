@@ -23,7 +23,7 @@
     <div class="container">
       <div class="blog-header">
         <h1 class="blog-title">Lara</h1>
-        <p class="lead blog-description">Minimalistic issue tracking system</p>
+        <p class="lead blog-description"><i class="glyphicon glyphicon-briefcase"></i> Minimalistic issue tracking system</p>
       </div>
 
       @if (Session::has('status'))
