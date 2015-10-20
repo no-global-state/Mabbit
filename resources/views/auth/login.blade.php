@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+Login
+@stop
+
 @section('content')
 {!! Form::open(['url' => '/auth/login']) !!}
 
