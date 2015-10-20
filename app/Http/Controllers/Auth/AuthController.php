@@ -24,6 +24,13 @@ class AuthController extends Controller
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
+     * Default path to redirect when registration is complete
+     * 
+     * @var string
+     */
+    protected $redirectTo = '/issues';
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
