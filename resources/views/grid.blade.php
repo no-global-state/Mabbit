@@ -17,7 +17,8 @@ Issues
 	<thead>
 		<th class="text-center text-muted">#</th>
 		<th>Issue</th>
-		<th>Description</th>
+		<th>Created at</th>
+		<th>Updated at</th>
 		<th class="text-center">Solved</th>
 		<th class="text-center">Actions</th>
 	</thead>
@@ -26,7 +27,8 @@ Issues
 		<tr>
 			<td class="text-center text-muted">{{ $record->id }}</td>
 			<td>{{ $record->name }}</td>
-			<td>{{ $record->description }}</td>
+			<td>{{ $record->created_at }}</td>
+			<td>{{ $record->updated_at }}</td>
 			<td class="text-center">{{ $record->solved ? 'Yes' : 'No' }}</td>
 			<td class="text-center">
 				<a title="View description of this issue" href="{{ action('Issues@viewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
