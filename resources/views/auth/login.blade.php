@@ -6,6 +6,8 @@ Login
 
 @section('content')
 {!! Form::open(['url' => '/auth/login']) !!}
+    
+    <p class="text-muted"><i class="glyphicon glyphicon-user"></i> Don't have an account? <a href="/auth/register">Click here to create a new one</a></p>
 
 	<div class="form-group">
 	  {!! Form::label('email', 'Email:') !!}
