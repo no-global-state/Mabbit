@@ -17,6 +17,7 @@
         @if (Auth::check())
         <nav class="blog-nav">
           <a class="blog-nav-item" href="{{ action('Issues@displayGridAction') }}">Issues</a>
+          <a class="blog-nav-item" href="/auth/logout">Logout</a>
         </nav>
         @endif
       </div>
