@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,7 +9,6 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet" />
     <link href="/css/styles.css" rel="stylesheet" />
     <link href="/css/select2.min.css" rel="stylesheet" />
-
   </head>
   <body>
     <div class="blog-masthead">
@@ -24,17 +23,16 @@
     </div>
 
     <div class="container">
-      <div class="blog-header">
-        <h1 class="blog-title">Mabbit</h1>
-        <p class="lead blog-description"><i class="glyphicon glyphicon-briefcase"></i> Minimalistic issue tracking system</p>
-      </div>
+      <header>
+        <h1>Mabbit</h1>
+        <p class="lead"><i class="glyphicon glyphicon-briefcase"></i> Minimalistic issue tracking system</p>
+      </header>
 
       @if (Session::has('status'))
-		 <div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
+		<div class="alert alert-success"><i class="glyphicon glyphicon-ok"></i> {{ Session::get('status') }}</div>
 	  @endif
 	    
   	  @yield('content')
-
     </div>
 
     <footer>
@@ -50,8 +48,6 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/select2.min.js"></script>
-    <script src="http://getbootstrap.com/assets/js/ie10-viewport-bug-workaround.js"></script>
     <script src="/js/app.js"></script>
-
   </body>
 </html>
