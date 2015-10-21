@@ -97,7 +97,7 @@ final class Issues extends BaseController
     /**
      * Updates an issue
      * 
-     * @param App\Http\Requests\IssueRequest $request
+     * @param \App\Http\Requests\IssueRequest $request
      * @return void
      */
     public function editAction(IssueRequest $request)
