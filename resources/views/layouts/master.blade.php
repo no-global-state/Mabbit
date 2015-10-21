@@ -14,9 +14,11 @@
   <body>
     <div class="blog-masthead">
       <div class="container">
+        @if (Auth::check())
         <nav class="blog-nav">
           <a class="blog-nav-item" href="{{ action('Issues@displayGridAction') }}">Issues</a>
         </nav>
+        @endif
       </div>
     </div>
 
