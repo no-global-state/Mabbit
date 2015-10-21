@@ -7,6 +7,8 @@ Registration
 @section('content')
 
 {!! Form::open(['url' => '/auth/register']) !!}
+    
+    <p class="text-muted"><i class="glyphicon glyphicon-user"></i> Already have an account? <a href="/auth/login">You can login instead</a></p>
 
     <div class="form-group">
       {!! Form::label('name', 'Name:') !!}
