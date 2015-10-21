@@ -22,7 +22,7 @@
 
     <div class="container">
       <div class="blog-header">
-        <h1 class="blog-title">Lara</h1>
+        <h1 class="blog-title">Mabbit</h1>
         <p class="lead blog-description"><i class="glyphicon glyphicon-briefcase"></i> Minimalistic issue tracking system</p>
       </div>
 
