@@ -62,7 +62,7 @@ final class Issues extends BaseController
 	/**
 	 * Adds a new issue
 	 * 
-	 * @param IssueRequest $request
+	 * @param \App\Http\Requests\IssueRequest $request
 	 * @return void
 	 */
 	public function addAction(IssueRequest $request)
@@ -97,7 +97,7 @@ final class Issues extends BaseController
 	/**
 	 * Updates an issue
 	 * 
-	 * @param IssueRequest $request
+	 * @param App\Http\Requests\IssueRequest $request
 	 * @return void
 	 */
 	public function editAction(IssueRequest $request)
