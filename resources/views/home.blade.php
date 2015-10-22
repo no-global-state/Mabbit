@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title')
+Welcome to Mabbit
+@stop
+
 @section('content')
   <div class="blog-post">
     <article>
