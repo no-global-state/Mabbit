@@ -8,13 +8,13 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class Home extends BaseController
 {
-	/**
-	 * Display a home page
-	 * 
-	 * @return string
-	 */
-	public function indexAction()
-	{
-		return view('home');
-	}
+    /**
+     * Display a home page
+     * 
+     * @return string
+     */
+    public function indexAction()
+    {
+        return view('home');
+    }
 }
