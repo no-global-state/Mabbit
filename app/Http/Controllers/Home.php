@@ -15,6 +15,11 @@ class Home extends BaseController
      */
     public function indexAction()
     {
-        return view('home');
+        // In case already logged in, redirect to a list of issues
+        if (\Auth::check()) {
+            return redirect()->action('Issues@displayGridAction');
+        } else {
+            return view('home');
+        }
     }
 }
