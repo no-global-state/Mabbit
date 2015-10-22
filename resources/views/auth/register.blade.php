@@ -5,7 +5,7 @@ Registration
 @stop
 
 @section('content')
-
+<div class="col-lg-6">
 {!! Form::open(['url' => '/auth/register']) !!}
     
     <p class="text-muted"><i class="glyphicon glyphicon-user"></i> Already have an account? <a href="/auth/login">You can login instead</a></p>
@@ -37,5 +37,5 @@ Registration
     </div>
 
 {!! Form::close() !!}
-
+</div>
 @stop
