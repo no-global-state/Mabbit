@@ -18,6 +18,10 @@ label {
  color: white;
 }
 
+.white {
+ background-color:white;
+}
+
 /*
  * Override Bootstrap's default container.
  */
