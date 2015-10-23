@@ -15,6 +15,9 @@ $(function(){
         
         // Attach a unique even handler for a button
         $("button[data-issue-button='remove']").off('click').click(function(event){
+            // Make the button disabled
+            $(this).addClass('disabled');
+            
             $.ajax({
                 url : '/issues/remove.ajax',
                 type : 'POST',
