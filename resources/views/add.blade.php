@@ -12,6 +12,4 @@
   	@include('partials.form')
   {!! Form::close() !!}
 
-   @include('partials.errors')
-   
 @stop

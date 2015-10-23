@@ -20,6 +20,8 @@
   {!! Form::checkbox('solved') !!}
 </div>
 
+@include('partials.errors')
+
 <div class="form-group">
   {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
   <a href="{{ action('Issues@displayGridAction') }}" class="btn btn-primary">Cancel</a>
