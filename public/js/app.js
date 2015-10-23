@@ -22,7 +22,11 @@ $(function(){
                     id : id
                 },
                 success : function(response){
-                    alert(response);
+                    if (response == "1"){
+                        window.location.reload();
+                    } else {
+                        console.log(response);
+                    }
                 }
             });
         });
