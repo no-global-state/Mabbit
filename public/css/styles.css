@@ -10,12 +10,20 @@ a {
   text-decoration: none !important;
 }
 
+article {
+ padding: 18px;
+}
+
 ul.alert {
  padding: 26px;
 }
 
 label {
  color: white;
+}
+
+.issue {
+ background-color:white;
 }
 
 .white {

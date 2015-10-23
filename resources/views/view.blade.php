@@ -8,6 +8,8 @@ Details for issue # {{ $issue->id }}
 
 <h2>{{ $issue->name }}</h2>
 
-<article>{{ $issue->description }}</article>
+<div class="container white">
+    <article>{{ $issue->description }}</article>
+</div>
 
 @stop
