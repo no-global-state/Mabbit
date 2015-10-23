@@ -13,7 +13,7 @@ Issues
 
 @if (!empty($records))
 
-<div class="table-responsive">
+<div class="table-responsive white">
     <table class="table table-hover table-bordered table-striped table-condensed">
         <thead>
             <th class="text-center text-muted">#</th>
@@ -34,7 +34,7 @@ Issues
                 <td class="text-center">
                     <a title="View description of this issue" href="{{ action('Issues@viewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
                     <a title="Edit this issue" href="{{ action('Issues@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
-                    <a title="Remove this issue" href="#"><i class="glyphicon glyphicon-remove"></i> </a>
+                    <a data-issue-id="{{ $record->id }}" title="Remove this issue" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-remove"></i> </a>
                 </td>
             </tr>
             @endforeach
@@ -46,5 +46,23 @@ Issues
 </div>
 
 @endif
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Are you sure?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Dude, are you sure you want to remove this issue permanently?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-issue-button="remove"><i class="glyphicon glyphicon-ok"></i> Yes</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> No</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 @stop
