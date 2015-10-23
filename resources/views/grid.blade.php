@@ -17,7 +17,7 @@ Issues
     <table class="table table-hover table-bordered table-striped table-condensed">
         <thead>
             <th class="text-center text-muted">#</th>
-            <th>Issue</th>
+            <th>Name</th>
             <th>Created at</th>
             <th>Updated at</th>
             <th class="text-center">Solved</th>
