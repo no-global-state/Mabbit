@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller as BaseController;
 use App\Http\Requests\IssueRequest;
+use Illuminate\Http\Request;
 use App\Issue;
 use App\Tag;
 
@@ -115,5 +116,21 @@ final class Issues extends BaseController
         \Session::flash('status', 'The issue has been updated successfully');
 
         return redirect()->action('Issues@displayGridAction');
+    }
+
+    /**
+     * Removes an issue by its associated id
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return string
+     */
+    public function removeAction(Request $request)
+    {
+        $id = $request->input('id');
+        Issue::destroy($id);
+
+        \Session::flash('status', 'The issue has been removed successfully');
+
+        return '1';
     }
 }
