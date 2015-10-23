@@ -34,7 +34,7 @@ Issues
                 <td class="text-center">
                     <a title="View description of this issue" href="{{ action('Issues@viewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
                     <a title="Edit this issue" href="{{ action('Issues@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
-                    <a data-issue-id="{{ $record->id }}" title="Remove this issue" href="#" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-remove"></i> </a>
+                    <a data-issue-id="{{ $record->id }}" title="Remove this issue" href="#" data-toggle="modal" data-target="#remove-confirmation"><i class="glyphicon glyphicon-remove"></i> </a>
                 </td>
             </tr>
             @endforeach
@@ -47,7 +47,7 @@ Issues
 
 @endif
 
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="remove-confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
