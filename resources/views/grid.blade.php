@@ -6,9 +6,17 @@ Issues
 
 @section('content')
 
-<a class="btn btn-primary" href="{{ action('Issues@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
+<div class="pull-left">
+    <a class="btn btn-primary" href="{{ action('Issues@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
+</div>
 
-<br />
+<div class="col-lg-4 pull-right">
+   {!! Form::label('filter', 'Filter:') !!}
+   {!! Form::select('filter', $filters, $filter, ['class' => 'form-control']) !!}
+</div>
+
+<div class="clearfix"></div>
+
 <br />
 
 @if (!empty($records))

@@ -19,6 +19,7 @@ Route::get('/issues/edit/{id}', 'Issues@editViewAction');
 Route::post('/issues/edit.ajax', 'Issues@editAction');
 Route::get('/issues/view/{id}', 'Issues@viewAction');
 Route::post('/issues/remove.ajax', 'Issues@removeAction');
+Route::get('/issues/filter.ajax', 'Issues@filterAction');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

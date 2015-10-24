@@ -22,14 +22,53 @@ final class Issues extends BaseController
     }
 
     /**
+     * Applies a filter
+     * 
+     * @param \Illuminate\Http\Request $request
+     * @return string
+     */
+    public function filterAction(Request $request)
+    {
+        $filter = $request->input('filter');
+
+        \Session::put('filter', $filter);
+        \Session::flash('status', 'The filter has been updated');
+
+        // Indicate success
+        return '1';
+    }
+
+    /**
      * Displays a a grid with issues
      * 
      * @return string
      */
     public function displayGridAction()
     {
+        $filter = \Session::get('filter');
+
+        switch ($filter) {
+            case 'solved':
+                $model = Issue::fetchLatests(true);
+            break;
+
+            case 'non-solved':
+                $model = Issue::fetchLatests(false);
+            break;
+
+            default:
+                $filter = 'all';
+                $model = Issue::fetchLatests();
+        }
+
         return view('grid', [
-            'records' => Issue::latest('id')->paginate(5)
+            'records' => $model->paginate(5),
+            'filters' => [
+                'all' => 'Show all',
+                'solved' => 'Show only solved',
+                'non-solved' => 'Show only non-solved'
+            ],
+            'filter' => $filter
         ]);
     }
 

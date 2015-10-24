@@ -34,5 +34,24 @@ $(function(){
             });
         });
     });
-    
+   
+    // Filter handler on grid
+    $("select[name='filter']").change(function(){
+        var value = $(this).val();
+        
+        $.ajax({
+            url : '/issues/filter.ajax',
+            data : {
+                filter : value
+            },
+            success : function(response){
+                if (response == "1"){
+                    window.location.reload();
+                } else {
+                    console.log(response);
+                }
+            }
+        });
+    });
+   
 });
