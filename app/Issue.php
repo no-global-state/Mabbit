@@ -37,4 +37,22 @@ class Issue extends Model
     {
         return $this->tags()->lists('id')->toArray();
     }
+
+    /**
+     * Fetches latest issues
+     * 
+     * @param boolean|null $solved Whether to fetch only solved ones
+     * @return array
+     */
+    public static function fetchLatests($solved = null)
+    {
+        if (is_bool($solved)) {
+            $operator = $solved === true ? '=' : '!=';
+            return self::where('solved', $operator, '1')->latest('id');
+        } else if (is_null($solved)) {
+            return self::latest('id');
+        } else {
+            // Undefined argument type supplied
+        }
+    }
 }
