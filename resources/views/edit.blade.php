@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Edit an issue
+    Edit an issue
 @stop
 
 @section('content')

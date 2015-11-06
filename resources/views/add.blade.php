@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-	Add an issue
+    Add an issue
 @stop
 
 @section('content')
@@ -9,7 +9,7 @@
   <h2 class="page-header">Add new issue</h2>
   
   {!! Form::open(['action' => 'Issues@addAction']) !!}
-  	@include('partials.form')
+    @include('partials.form')
   {!! Form::close() !!}
 
 @stop

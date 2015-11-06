@@ -50,7 +50,7 @@ Issues
     </table>
 </div>
 <div class="text-center">
-	{!! $records->render() !!}
+    {!! $records->render() !!}
 </div>
 
 @endif

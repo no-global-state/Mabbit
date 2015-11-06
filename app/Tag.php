@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Tag extends Model
 {
-	/**
-	 * {@inheritDoc}
-	 */
-	protected $fillable = [
-		'name'
-	];
+    /**
+     * {@inheritDoc}
+     */
+    protected $fillable = [
+        'name'
+    ];
 
     /**
      * Indicates if the model should be timestamped.
@@ -20,13 +20,13 @@ class Tag extends Model
      */
     public $timestamps = false;
 
-	/**
-	 * Returns a collection of associated issues
-	 * 
-	 * @return array
-	 */
-	public function issues()
-	{
-		return $this->belongsToMany('App\Issue');
-	}
+    /**
+     * Returns a collection of associated issues
+     * 
+     * @return array
+     */
+    public function issues()
+    {
+        return $this->belongsToMany('App\Issue');
+    }
 }

@@ -22,6 +22,6 @@ Route::post('/issues/remove.ajax', 'Issues@removeAction');
 Route::get('/issues/filter.ajax', 'Issues@filterAction');
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController'
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController'
 ]);

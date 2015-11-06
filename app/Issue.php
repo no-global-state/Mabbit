@@ -18,7 +18,7 @@ class Issue extends Model
         'solved'
     ];
 
-	/**
+    /**
      * Fetch all tags associated with a model
      * 
      * @return array

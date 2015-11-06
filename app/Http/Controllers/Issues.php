@@ -88,10 +88,10 @@ final class Issues extends BaseController
     }
 
     /**
-	 * Displays all issues
-	 * 
-	 * @return string
-	 */
+     * Displays all issues
+     * 
+     * @return string
+     */
     public function addViewAction()
     {
         return view('add', [
