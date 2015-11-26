@@ -17,7 +17,7 @@ class Tag extends Controller
     public function index()
     {
         return view('tags.grid', [
-            'tags' => TagModel::all()
+            'tags' => TagModel::latest('id')->get()
         ]);
     }
 
