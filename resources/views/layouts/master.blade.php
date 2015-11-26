@@ -17,6 +17,7 @@
         @if (Auth::check())
         <nav class="blog-nav">
           <a class="blog-nav-item" href="{{ action('Issues@displayGridAction') }}"><i class="glyphicon glyphicon-th-list"></i> Issues</a>
+          <a class="blog-nav-item" href="{{ action('Tag@index') }}"><i class="glyphicon glyphicon-tag"></i> Tags</a>
           <a class="blog-nav-item" href="/auth/logout"><i class="glyphicon glyphicon-remove-sign"></i> Logout</a>
         </nav>
         @endif
@@ -39,6 +40,24 @@
     <footer>
       <p>Copyright &copy; 2015 No Global State Lab</p>
     </footer>
+
+    <div class="modal fade" id="remove-confirmation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Are you sure?</h4>
+          </div>
+          <div class="modal-body">
+            <p>Dude, are you sure you want to remove this issue permanently?</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-issue-button="remove"><i class="glyphicon glyphicon-ok"></i> Yes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="glyphicon glyphicon-remove"></i> No</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
