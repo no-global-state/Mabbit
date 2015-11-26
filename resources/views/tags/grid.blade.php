@@ -14,6 +14,7 @@ Tags
     <table class="table table-hover table-bordered table-striped table-condensed">
         <thead>
             <tr>
+                <th class="text-center text-muted">#</th>
                 <th>Name</th>
                 <th class="text-center">Actions</th>
             </tr>
@@ -21,6 +22,7 @@ Tags
         <tbody>
             @foreach ($tags as $tag)
             <tr>
+                <td class="text-center text-muted">{{ $tag->id }}</td>
                 <td>{{ $tag->name }}</td>
                 <td class="text-center">
                     <a href="{{ action('Tag@edit', $tag->id) }}"><i class="glyphicon glyphicon-pencil"></i></a>
