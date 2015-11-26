@@ -21,6 +21,13 @@ Route::get('/issues/view/{id}', 'Issues@viewAction');
 Route::post('/issues/remove.ajax', 'Issues@removeAction');
 Route::get('/issues/filter.ajax', 'Issues@filterAction');
 
+Route::get('/tags', 'Tag@index');
+Route::get('/tags/create', 'Tag@create');
+Route::post('/tags/store', 'Tag@store');
+Route::get('/tags/edit/{id}', 'Tag@edit');
+Route::post('/tags/update/{id}', 'Tag@update');
+Route::post('/tags/destroy/{id}', 'Tag@destroy');
+
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController'
