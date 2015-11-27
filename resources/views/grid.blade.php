@@ -42,7 +42,7 @@ Issues
                 <td class="text-center">
                     <a title="View description of this issue" href="{{ action('Issues@viewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
                     <a title="Edit this issue" href="{{ action('Issues@editViewAction', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
-                    <a data-issue-id="{{ $record->id }}" title="Remove this issue" href="#" data-toggle="modal" data-target="#remove-confirmation"><i class="glyphicon glyphicon-remove"></i> </a>
+                    <a data-button="destroy" title="Remove this issue" href="{{ action ('Issues@destroy', $record->id) }}" data-toggle="modal" data-target="#remove-confirmation"><i class="glyphicon glyphicon-remove"></i> </a>
                 </td>
             </tr>
             @endforeach
