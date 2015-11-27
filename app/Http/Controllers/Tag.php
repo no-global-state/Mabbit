@@ -102,7 +102,7 @@ class Tag extends Controller
      */
     public function destroy($id)
     {
-        TagModel::findOrFail($id)->destroy($id);
+        TagModel::destroy($id);
         \Session::flash('status', 'The tag has been removed successfully');
 
         return '1';
