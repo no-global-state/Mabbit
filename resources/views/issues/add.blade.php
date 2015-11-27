@@ -9,7 +9,7 @@
   <h2 class="page-header">Add new issue</h2>
   
   {!! Form::open(['action' => 'Issues@store']) !!}
-    @include('partials.form')
+    @include('issues.form')
   {!! Form::close() !!}
 
 @stop

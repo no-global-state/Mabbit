@@ -11,7 +11,7 @@
   {!! Form::model($model, ['action' => ['Issues@update', $model->id]]) !!}
   {!! Form::hidden('id') !!}
 
-    @include('partials.form')
+    @include('issues.form')
   {!! Form::close() !!}
    
 @stop
