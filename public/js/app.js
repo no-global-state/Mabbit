@@ -36,7 +36,7 @@ $(function(){
         var value = $(this).val();
         
         $.ajax({
-            url : '/issues/filter.ajax',
+            url : '/issues/filter',
             data : {
                 filter : value
             },

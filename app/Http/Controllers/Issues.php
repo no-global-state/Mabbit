@@ -25,9 +25,9 @@ final class Issues extends BaseController
      * Applies a filter
      * 
      * @param \Illuminate\Http\Request $request
-     * @return string
+     * @return \Illuminate\Http\Response
      */
-    public function filterAction(Request $request)
+    public function filter(Request $request)
     {
         $filter = $request->input('filter');
 

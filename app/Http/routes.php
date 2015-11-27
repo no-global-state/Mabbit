@@ -19,7 +19,7 @@ Route::get('/issues/edit/{id}', 'Issues@edit');
 Route::post('/issues/update/{id}', 'Issues@update');
 Route::get('/issues/show/{id}', 'Issues@show');
 Route::post('/issues/destroy/{id}', 'Issues@destroy');
-Route::get('/issues/filter.ajax', 'Issues@filterAction');
+Route::get('/issues/filter', 'Issues@filter');
 
 Route::get('/tags', 'Tag@index');
 Route::get('/tags/create', 'Tag@create');
