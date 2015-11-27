@@ -135,16 +135,17 @@ final class Issues extends BaseController
     }
 
     /**
-     * Updates an issue
+     * Update the specified resource in storage.
      * 
      * @param \App\Http\Requests\IssueRequest $request
-     * @return void
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function editAction(IssueRequest $request)
+    public function update(IssueRequest $request, $id)
     {
         $input = $request->all();
 
-        $model = Issue::findOrFail($input['id']);
+        $model = Issue::findOrFail($id);
         $model->update($input);
 
         $tags = $request->input('tag_list', []);
