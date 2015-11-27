@@ -9,21 +9,17 @@ $(function(){
         }
     });
     
-    $("a[data-issue-id]").click(function(event){
-        // Track the clicked id
-        var id = $(this).data('issue-id');
+    $("a[data-button='destroy']").click(function(event){
+        event.preventDefault();
+        var url = $(this).attr('href');
         
-        // Attach a unique even handler for a button
         $("button[data-issue-button='remove']").off('click').click(function(event){
             // Make the button disabled
             $(this).addClass('disabled');
             
             $.ajax({
-                url : '/issues/remove.ajax',
+                url : url,
                 type : 'POST',
-                data : {
-                    id : id
-                },
                 success : function(response){
                     if (response == "1"){
                         window.location.reload();
