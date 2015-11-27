@@ -9,6 +9,14 @@ use App\Tag as TagModel;
 
 class Tag extends Controller
 {
+    /**
+     * {@inheritDoc}
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
    /**
      * Display a listing of the resource.
      *
