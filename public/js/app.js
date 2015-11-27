@@ -30,7 +30,9 @@ $(function(){
             });
         });
     });
-   
+    
+    $('[data-toggle="tooltip"]').tooltip();
+    
     // Filter handler on grid
     $("select[name='filter']").change(function(){
         var value = $(this).val();
