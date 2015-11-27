@@ -158,18 +158,16 @@ final class Issues extends BaseController
     }
 
     /**
-     * Removes an issue by its associated id
-     * 
-     * @param \Illuminate\Http\Request $request
-     * @return string
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function removeAction(Request $request)
+    public function destroy($id)
     {
-        $id = $request->input('id');
         Issue::destroy($id);
 
         \Session::flash('status', 'The issue has been removed successfully');
-
         return '1';
     }
 }

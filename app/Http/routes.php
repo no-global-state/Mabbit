@@ -18,7 +18,7 @@ Route::post('/issues/add.ajax', 'Issues@addAction');
 Route::get('/issues/edit/{id}', 'Issues@editViewAction');
 Route::post('/issues/edit.ajax', 'Issues@editAction');
 Route::get('/issues/view/{id}', 'Issues@viewAction');
-Route::post('/issues/remove.ajax', 'Issues@removeAction');
+Route::post('/issues/destroy/{id}', 'Issues@destroy');
 Route::get('/issues/filter.ajax', 'Issues@filterAction');
 
 Route::get('/tags', 'Tag@index');
