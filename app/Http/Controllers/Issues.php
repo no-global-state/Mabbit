@@ -73,12 +73,12 @@ final class Issues extends BaseController
     }
 
     /**
-     * Displays an issue by its associated id
-     * 
-     * @param string $id Issue's id
-     * @return string
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function viewAction($id)
+    public function show($id)
     {
         $issue = Issue::findOrFail($id);
 

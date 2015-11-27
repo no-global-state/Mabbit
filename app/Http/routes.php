@@ -17,7 +17,7 @@ Route::get('/issues/create', 'Issues@create');
 Route::post('/issues/store', 'Issues@store');
 Route::get('/issues/edit/{id}', 'Issues@edit');
 Route::post('/issues/update/{id}', 'Issues@update');
-Route::get('/issues/view/{id}', 'Issues@viewAction');
+Route::get('/issues/show/{id}', 'Issues@show');
 Route::post('/issues/destroy/{id}', 'Issues@destroy');
 Route::get('/issues/filter.ajax', 'Issues@filterAction');
 
