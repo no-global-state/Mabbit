@@ -13,8 +13,8 @@
 
 Route::get('/', 'Home@indexAction');
 Route::get('/issues', 'Issues@displayGridAction');
-Route::get('/issues/add', 'Issues@addViewAction');
-Route::post('/issues/add.ajax', 'Issues@addAction');
+Route::get('/issues/create', 'Issues@create');
+Route::post('/issues/store', 'Issues@store');
 Route::get('/issues/edit/{id}', 'Issues@edit');
 Route::post('/issues/update/{id}', 'Issues@update');
 Route::get('/issues/view/{id}', 'Issues@viewAction');

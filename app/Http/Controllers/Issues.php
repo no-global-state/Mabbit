@@ -88,11 +88,11 @@ final class Issues extends BaseController
     }
 
     /**
-     * Displays all issues
-     * 
-     * @return string
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
      */
-    public function addViewAction()
+    public function create()
     {
         return view('add', [
             'tags' => Tag::lists('name', 'id')
@@ -100,12 +100,12 @@ final class Issues extends BaseController
     }
 
     /**
-     * Adds a new issue
-     * 
+     * Store a newly created resource in storage.
+     *
      * @param \App\Http\Requests\IssueRequest $request
-     * @return void
+     * @return \Illuminate\Http\Response
      */
-    public function addAction(IssueRequest $request)
+    public function store(IssueRequest $request)
     {
         // Add the issue itself
         $model = Issue::create($request->all());

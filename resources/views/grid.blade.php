@@ -7,7 +7,7 @@ Issues
 @section('content')
 
 <div class="pull-left">
-    <a class="btn btn-primary" href="{{ action('Issues@addViewAction') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
+    <a class="btn btn-primary" href="{{ action('Issues@create') }}"><i class="glyphicon glyphicon-floppy-open"></i> New issue</a>
 </div>
 
 <div class="col-lg-4 pull-right">
