@@ -41,9 +41,9 @@ final class Issues extends BaseController
     /**
      * Displays a a grid with issues
      * 
-     * @return string
+     * @return \Illuminate\Http\Response
      */
-    public function displayGridAction()
+    public function grid()
     {
         $filter = \Session::get('filter');
 
@@ -115,7 +115,7 @@ final class Issues extends BaseController
 
         \Session::flash('status', 'The issue has added updated successfully');
 
-        return redirect()->action('Issues@displayGridAction');
+        return redirect()->action('Issues@grid');
     }
 
     /**
@@ -155,7 +155,7 @@ final class Issues extends BaseController
 
         \Session::flash('status', 'The issue has been updated successfully');
 
-        return redirect()->action('Issues@displayGridAction');
+        return redirect()->action('Issues@grid');
     }
 
     /**

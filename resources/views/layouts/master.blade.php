@@ -16,7 +16,7 @@
       <div class="container">
         @if (Auth::check())
         <nav class="blog-nav">
-          <a class="blog-nav-item" href="{{ action('Issues@displayGridAction') }}"><i class="glyphicon glyphicon-th-list"></i> Issues</a>
+          <a class="blog-nav-item" href="{{ action('Issues@grid') }}"><i class="glyphicon glyphicon-th-list"></i> Issues</a>
           <a class="blog-nav-item" href="{{ action('Tag@index') }}"><i class="glyphicon glyphicon-tag"></i> Tags</a>
           <a class="blog-nav-item" href="/auth/logout"><i class="glyphicon glyphicon-remove-sign"></i> Logout</a>
         </nav>

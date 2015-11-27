@@ -24,5 +24,5 @@
 
 <div class="form-group">
   {!! Form::submit('Submit', ['class' => 'btn btn-primary']) !!}
-  <a href="{{ action('Issues@displayGridAction') }}" class="btn btn-primary">Cancel</a>
+  <a href="{{ action('Issues@grid') }}" class="btn btn-primary">Cancel</a>
 </div>
