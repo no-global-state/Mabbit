@@ -40,9 +40,9 @@ Issues
                 <td>{{ $record->updated_at }}</td>
                 <td class="text-center">{{ $record->solved ? 'Yes' : 'No' }}</td>
                 <td class="text-center">
-                    <a title="View description of this issue" href="{{ action('Issues@show', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
-                    <a title="Edit this issue" href="{{ action('Issues@edit', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
-                    <a data-button="destroy" title="Remove this issue" href="{{ action ('Issues@destroy', $record->id) }}" data-toggle="modal" data-target="#remove-confirmation"><i class="glyphicon glyphicon-remove"></i> </a>
+                    <a data-toggle="tooltip" data-placement="bottom" title="View description of this issue" href="{{ action('Issues@show', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-eye-open"></i> </a>
+                    <a data-toggle="tooltip" data-placement="bottom" title="Edit this issue" href="{{ action('Issues@edit', ['id' => $record->id]) }}"><i class="glyphicon glyphicon-file"></i> </a>
+                    <a data-placement="bottom" data-button="destroy" title="Remove this issue" href="{{ action ('Issues@destroy', $record->id) }}" data-toggle="modal" data-target="#remove-confirmation"><i class="glyphicon glyphicon-remove"></i> </a>
                 </td>
             </tr>
             @endforeach

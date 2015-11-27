@@ -6,9 +6,9 @@ Tags
 
 @section('content')
 
-<a href="{{ action('Tag@create') }}" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i> Add new tag</a>
-
-<br />
+<div class="button-box">
+    <a href="{{ action('Tag@create') }}" class="btn btn-primary"><i class="glyphicon glyphicon-floppy-open"></i> Add new tag</a>
+</div>
 
 <div class="table-responsive white">
     <table class="table table-hover table-bordered table-striped table-condensed">
@@ -25,8 +25,8 @@ Tags
                 <td class="text-center text-muted">{{ $tag->id }}</td>
                 <td>{{ $tag->name }}</td>
                 <td class="text-center">
-                    <a href="{{ action('Tag@edit', $tag->id) }}"><i class="glyphicon glyphicon-pencil"></i></a>
-                    <a data-button="destroy" data-toggle="modal" data-target="#remove-confirmation" href="{{ action('Tag@destroy', $tag->id) }}"><i class="glyphicon glyphicon-remove"></i></a>
+                    <a data-toggle="tooltip" data-placement="bottom" title="Edit this tag" href="{{ action('Tag@edit', $tag->id) }}"><i class="glyphicon glyphicon-pencil"></i></a>
+                    <a data-button="destroy" data-toggle="modal" data-target="#remove-confirmation" title="Remove this tag" href="{{ action('Tag@destroy', $tag->id) }}"><i class="glyphicon glyphicon-remove"></i></a>
                 </td>
             </tr>
             @endforeach

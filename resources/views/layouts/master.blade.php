@@ -12,13 +12,13 @@
     <link href="/css/select2.min.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="blog-masthead">
+    <div class="nav-head">
       <div class="container">
         @if (Auth::check())
-        <nav class="blog-nav">
-          <a class="blog-nav-item" href="{{ action('Issues@grid') }}"><i class="glyphicon glyphicon-th-list"></i> Issues</a>
-          <a class="blog-nav-item" href="{{ action('Tag@index') }}"><i class="glyphicon glyphicon-tag"></i> Tags</a>
-          <a class="blog-nav-item" href="/auth/logout"><i class="glyphicon glyphicon-remove-sign"></i> Logout</a>
+        <nav>
+          <a href="{{ action('Issues@grid') }}"><i class="glyphicon glyphicon-th-list"></i> Issues</a>
+          <a href="{{ action('Tag@index') }}"><i class="glyphicon glyphicon-tag"></i> Tags</a>
+          <a href="/auth/logout"><i class="glyphicon glyphicon-remove-sign"></i> Logout</a>
         </nav>
         @endif
       </div>
@@ -49,7 +49,7 @@
             <h4 class="modal-title">Are you sure?</h4>
           </div>
           <div class="modal-body">
-            <p>Dude, are you sure you want to remove this issue permanently?</p>
+            <p>Are you sure you want to remove this permanently?</p>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-issue-button="remove"><i class="glyphicon glyphicon-ok"></i> Yes</button>
