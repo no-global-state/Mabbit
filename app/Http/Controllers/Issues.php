@@ -119,12 +119,12 @@ final class Issues extends BaseController
     }
 
     /**
-     * Displays issue's edit form
-     * 
-     * @param $id The issue id
-     * @return string
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
      */
-    public function editViewAction($id)
+    public function edit($id)
     {
         $issue = Issue::findOrFail($id);
 
