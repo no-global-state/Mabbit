@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'Home@indexAction');
+Route::get('/', 'Home@index');
 Route::get('/issues', 'Issues@grid');
 Route::get('/issues/create', 'Issues@create');
 Route::post('/issues/store', 'Issues@store');

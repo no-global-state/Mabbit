@@ -11,13 +11,13 @@ class Home extends BaseController
     /**
      * Display a home page
      * 
-     * @return string
+     * @return \Illuminate\Http\Response
      */
-    public function indexAction()
+    public function index()
     {
         // In case already logged in, redirect to a list of issues
         if (\Auth::check()) {
-            return redirect()->action('Issues@displayGridAction');
+            return redirect()->action('Issues@grid');
         } else {
             return view('home');
         }
