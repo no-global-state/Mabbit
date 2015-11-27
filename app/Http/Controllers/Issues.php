@@ -61,7 +61,7 @@ final class Issues extends BaseController
                 $model = Issue::fetchLatests();
         }
 
-        return view('grid', [
+        return view('issues.grid', [
             'records' => $model->paginate(5),
             'filters' => [
                 'all' => 'Show all',
@@ -82,7 +82,7 @@ final class Issues extends BaseController
     {
         $issue = Issue::findOrFail($id);
 
-        return view('view', [
+        return view('issues.view', [
             'issue' => $issue
         ]);
     }
@@ -94,7 +94,7 @@ final class Issues extends BaseController
      */
     public function create()
     {
-        return view('add', [
+        return view('issues.add', [
             'tags' => Tag::lists('name', 'id')
         ]);
     }
@@ -128,7 +128,7 @@ final class Issues extends BaseController
     {
         $issue = Issue::findOrFail($id);
 
-        return view('edit', [
+        return view('issues.edit', [
             'model' => $issue,
             'tags' => Tag::lists('name', 'id')
         ]);
