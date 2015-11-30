@@ -49,16 +49,16 @@ final class Issues extends BaseController
 
         switch ($filter) {
             case 'solved':
-                $model = Issue::fetchLatests(true);
+                $model = Issue::getLatests(true);
             break;
 
             case 'non-solved':
-                $model = Issue::fetchLatests(false);
+                $model = Issue::getLatests(false);
             break;
 
             default:
                 $filter = 'all';
-                $model = Issue::fetchLatests();
+                $model = Issue::getLatests();
         }
 
         return view('issues.grid', [

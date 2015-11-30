@@ -45,7 +45,7 @@ class Issue extends Model
      * @param boolean|null $solved Whether to fetch only solved ones
      * @return array
      */
-    public static function fetchLatests($solved = null)
+    public static function getLatests($solved = null)
     {
         $userId = \Auth::user()->id;
 
