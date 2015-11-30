@@ -10,6 +10,15 @@ a {
   text-decoration: none !important;
 }
 
+article.home {
+  min-height: 300px;
+}
+
+article.home > p {
+ color: white;
+ font-size: larger;
+}
+
 article {
  padding: 18px;
 }
