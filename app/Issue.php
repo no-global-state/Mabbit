@@ -13,6 +13,7 @@ class Issue extends Model
      * {@inheritDoc}
      */
     protected $fillable = [
+        'user_id',
         'name', 
         'description',
         'solved'
@@ -46,11 +47,13 @@ class Issue extends Model
      */
     public static function fetchLatests($solved = null)
     {
+        $userId = \Auth::user()->id;
+
         if (is_bool($solved)) {
             $operator = $solved === true ? '=' : '!=';
-            return self::where('solved', $operator, '1')->latest('id');
+            return self::where('solved', $operator, '1')->andWhere('user_id', $userId)->latest('id');
         } else if (is_null($solved)) {
-            return self::latest('id');
+            return self::where('user_id', $userId)->latest('id');
         } else {
             // Undefined argument type supplied
         }

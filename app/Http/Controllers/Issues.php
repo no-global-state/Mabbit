@@ -107,8 +107,10 @@ final class Issues extends BaseController
      */
     public function store(IssueRequest $request)
     {
+        $data = array_merge(array('user_id' => \Auth::user()->id), $request->all());
+
         // Add the issue itself
-        $model = Issue::create($request->all());
+        $model = Issue::create($data);
 
         // Add its tags
         $model->tags()->attach($request->input('tag_list'));
