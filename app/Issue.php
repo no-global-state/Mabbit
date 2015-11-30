@@ -43,7 +43,7 @@ class Issue extends Model
      * Fetches latest issues
      * 
      * @param boolean|null $solved Whether to fetch only solved ones
-     * @return array
+     * @return array|boolean
      */
     public static function getLatests($solved = null)
     {
@@ -56,6 +56,7 @@ class Issue extends Model
             return self::where('user_id', $userId)->latest('id');
         } else {
             // Undefined argument type supplied
+            return false;
         }
     }
 }
