@@ -115,7 +115,7 @@ final class Issues extends BaseController
         // Add its tags
         $model->tags()->attach($request->input('tag_list'));
 
-        \Session::flash('status', 'The issue has added updated successfully');
+        \Session::flash('status', 'The issue has created successfully');
 
         return redirect()->action('Issues@grid');
     }
